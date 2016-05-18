@@ -1,6 +1,7 @@
 (ns board.core
   (:require
     [reagent.ratom :refer-macros [reaction]]
+    [reagent.core :refer [render]]
     [clojure.string :refer [capitalize]]
     [remlok.loc :as l]
     [remlok.rem :as r]))
@@ -62,8 +63,7 @@
                  [q (r/read db q)])
         muts* (for [q muts]
                 [q (r/mut! db q)])
-        res* {:reads reads*
-              :muts muts*}]
+        res* (concat reads* muts*)]
     (res res*)))
 
 ;;;;;;;;;;;
@@ -127,6 +127,11 @@
                      (l/mut! [:ad/new @cur-ad])
                      (l/mut! [:cur-ad ""]))}
         "post!"]])))
+
+(defn root []
+  [:div
+   [ads]
+   [new-ad]])
 
 ;;;;;;;;;;;;;;
 ;; Figwheel ;;

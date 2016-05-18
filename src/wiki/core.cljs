@@ -2,8 +2,8 @@
   (:import [goog Uri]
            [goog.net Jsonp])
   (:require
-    [reagent.core :refer [render]]
     [reagent.ratom :refer-macros [reaction]]
+    [reagent.core :refer [render]]
     [remlok.loc :as l]
     [remlok.rem :as r]
     [cljs.core.async :as a :refer [chan put! take!]]))
@@ -14,8 +14,9 @@
 ;; Inspired by the om.next example of the same functionality.
 ;; Features:
 ;; 1) Remote reads.
-;; 2) Asynchronous processing on the remote using core.async.
-;; 3) Caching on the local, so that unnecessary remote reads are not made.
+;; 2) Remote physically located on the client.
+;; 3) Asynchronous processing on the remote using core.async.
+;; 4) Caching on the local, so that unnecessary remote reads are not made.
 
 ;;;;;;;;;;;;
 ;; Remote ;;
@@ -41,7 +42,7 @@
                    (let [ch* (chan)]
                      (take! ch #(put! ch* [q %]))
                      ch*)))]
-    (take! reads* #(res {:reads %}))))
+    (take! reads* #(res %))))
 
 ;;;;;;;;;;;
 ;; Local ;;
@@ -96,6 +97,11 @@
        (for [s @sugg]
          ^{:key (str s)}
          [:li (str s)])])))
+
+(defn root []
+  [:div
+   [input]
+   [list]])
 
 ;;;;;;;;;;;;;;
 ;; Figwheel ;;

@@ -27,4 +27,24 @@
                            :asset-path "js"
                            :optimizations :none
                            :source-map true
+                           :source-map-timestamp true}}
+               {:id "wiki"
+                :source-paths ["src"]
+                :figwheel true
+                :compiler {:main "wiki.core"
+                           :output-dir "resources/public/js"
+                           :output-to  "resources/public/js/client.js"
+                           :asset-path "js"
+                           :optimizations :none
+                           :source-map true
+                           :source-map-timestamp true}}
+               {:id "board"
+                :source-paths ["src"]
+                :figwheel true
+                :compiler {:main "board.core"
+                           :output-dir "resources/public/js"
+                           :output-to  "resources/public/js/client.js"
+                           :asset-path "js"
+                           :optimizations :none
+                           :source-map true
                            :source-map-timestamp true}}]})
