@@ -1,7 +1,7 @@
 (ns counter.core
   (:require
-    [remlok.loc :refer [pub read mut mut!]]
-    [reagent.core :refer [render]]))
+    [reagent.core :refer [render]]
+    [remlok.loc :refer [pub read mut mut!]]))
 
 ;;;;;;;;;;;;;
 ;; Counter ;;
