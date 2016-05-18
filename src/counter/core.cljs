@@ -6,21 +6,21 @@
 ;;;;;;;;;;;;;
 ;; Counter ;;
 ;;;;;;;;;;;;;
-;; Features local subscriptions and mutations.
+;; Features local reads and mutations.
 
 (pub
   :counter
-  (fn [db]
+  (fn [db _]
     {:loc db}))
 
 (mut
   :dec
-  (fn [db]
+  (fn [db _]
     {:loc (dec db)}))
 
 (mut
   :inc
-  (fn [db]
+  (fn [db _]
     {:loc (inc db)}))
 
 (defn root []

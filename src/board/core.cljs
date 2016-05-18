@@ -72,7 +72,7 @@
 
 (l/pub
   :ads
-  (fn [db]
+  (fn [db _]
     {:loc
           (reaction
             (sort-by

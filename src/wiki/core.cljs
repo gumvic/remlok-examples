@@ -50,7 +50,7 @@
 
 (l/pub
   :search
-  (fn [db]
+  (fn [db _]
     {:loc (reaction
             (get @db :search))}))
 
