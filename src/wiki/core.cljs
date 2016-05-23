@@ -60,7 +60,7 @@
     {:loc
      (reaction
        (get-in @db [:sugg search]))
-     :rem
+     :wiki
      (when
        (and
          (> (count search) 2)
@@ -78,7 +78,9 @@
     (assoc-in db [:sugg search] data)))
 
 (l/send
-  (fn [req res]
+  :wiki
+  (fn [_ req res]
+    (println req)
     (receive req res)))
 
 (defn input []

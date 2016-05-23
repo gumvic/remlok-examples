@@ -92,7 +92,8 @@
          :rem [:ad/new ad]}))))
 
 (l/send
-  (fn [req res]
+  :rem
+  (fn [_ req res]
     (js/setTimeout
       #(receive req res)
       1000)))
