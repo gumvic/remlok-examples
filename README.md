@@ -10,11 +10,15 @@ See the sources for more information.
 
 2) [http://localhost:3449/hello.html](http://localhost:3449/hello.html)
 
+Features: none.
+
 ## Counter
 
 1) lein figwheel counter
 
 2) [http://localhost:3449/counter.html](http://localhost:3449/counter.html)
+
+Features: basic reads and mutations.
 
 ## Wiki Autocompleter
 
@@ -22,8 +26,12 @@ See the sources for more information.
 
 2) [http://localhost:3449/wiki.html](http://localhost:3449/wiki.html)
 
+Features: talking to remote.
+
 ## Ad Board
 
 1) lein figwheel board
 
 2) [http://localhost:3449/board.html](http://localhost:3449/board.html)
+
+Features: optimistic updates, tmp id patching.
