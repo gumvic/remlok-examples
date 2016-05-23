@@ -24,7 +24,7 @@ Features: basic reads and mutations.
 
 2) [http://localhost:3449/wiki.html](http://localhost:3449/wiki.html)
 
-Features: talking to remote.
+Features: remote.
 
 ## Ad Board
 
