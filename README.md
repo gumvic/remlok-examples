@@ -10,8 +10,6 @@ See the sources for more information.
 
 2) [http://localhost:3449/hello.html](http://localhost:3449/hello.html)
 
-Features: none.
-
 ## Counter
 
 1) lein figwheel counter
